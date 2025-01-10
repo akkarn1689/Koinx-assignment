@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Crypto API');
 });
 
-app.use('/cryptos/api', router);
+app.use('/', router);
 // Schedule background job every 2 hours
 cron.schedule("0 */2 * * *", fetchCryptoData);
 fetchCryptoData();

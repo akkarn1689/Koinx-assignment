@@ -61,6 +61,11 @@ const connectWithRetry = async (retryCount = 0) => {
 
 connectWithRetry();
 
+// Routes
+app.get('/', (req, res) => {
+  res.send('Welcome to the Crypto API');
+});
+
 app.use('/cryptos/api', router);
 // Schedule background job every 2 hours
 cron.schedule("0 */2 * * *", fetchCryptoData);
